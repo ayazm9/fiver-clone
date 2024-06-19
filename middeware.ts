@@ -1,11 +1,18 @@
-import { withClerkMiddleware } from "@clerk/nextjs/server";
-import { NextResponse } from "next/server";
-import type { NextRequest } from 'next/server'
- 
-export default withClerkMiddleware((req: NextRequest) => {
-  return NextResponse.next();
+// Example of incorrect import (assuming 'authMiddleware' is exported)
+import { authMiddleware } from '@clerk/nextjs';
+
+// Check the correct export in the module
+// If 'authMiddleware' is not available, refer to updated documentation or changelog
+
+
+
+export default authMiddleware({
+
+
 });
- 
-// Stop Middleware running on static files
-export const config = { matcher: '/((?!.*\\.).*)' }
- 
+
+export const config = {
+  matcher:[
+
+  ]
+};
